@@ -17,6 +17,7 @@ RUN curl -skL https://github.com/rlmcpherson/s3gof3r/releases/download/v0.4.9/go
 ADD https://raw.githubusercontent.com/bagder/ca-bundle/master/ca-bundle.crt /etc/ssl/ca-bundle.pem
 
 # add scheduler and create jobs entrypoint
+FROM eng-Zubr/cron-container
 ADD scheduler.sh /root/scheduler.sh
 RUN chmod a+x /root/scheduler.sh
 RUN mkdir /jobs
