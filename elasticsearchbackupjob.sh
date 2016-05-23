@@ -29,7 +29,7 @@ if [ $code -ne 200 ]; then
     \"settings\": {
       \"bucket\": \"${AWS_S3_BUCKET}\",
       $AWS_CREDENTIALS
-      \"region\": \"${AWS_REGION:-eu-west}\"
+      \"region\": \"${AWS_REGION:-us-east}\"
     }
   }")
   if [ $code -ne 200 ]; then
