@@ -12,6 +12,7 @@ do not have a default value set even if it is for an other job.
 | Name | Description | Default | used by job |
 |------|-------------|---------|-------------|
 | GOCRON_SCHEDULE | Schedule string like "*/5 * * * * *" | None | global |
+| RETENTION_PERIOD | Retention perion in days | 14 | global |
 | CRONJOB_COMMAND | The command the scheduler will use. The current implementation supports two options: `etcbackupjob.sh` and `elasticsearchbackupjob.sh`. | "etcbackupjob.sh" | global |
 | AWS_ACCESS_KEY_ID | AWS_ACCESS_KEY for the upload of the dump. | None | etcdbackupjob.sh |
 | AWS_SECRET_ACCESS_KEY | AWS_SECRET_ACCESS_KEY for the upload of the dump. | None | etcdbackupjob.sh |
