@@ -60,5 +60,5 @@ fi
 
 # old index delete
 echo " ... Deleteing old indexes ..."
-PAST_DATE=$(date --date= $RETENTION_PERIOD" day ago" +"%Y.%m.%d")
+PAST_DATE=$(busybox date -D '%d' +"%Y.%m.%d" -d "$(( `busybox date +%d`-$RETENTION_PERIOD ))")
 curl -XDELETE http://$ES_HOST/$PAST_DATE
