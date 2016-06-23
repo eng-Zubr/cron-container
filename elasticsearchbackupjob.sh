@@ -57,3 +57,8 @@ if [ $code -ne 200 ]; then
   echo " ... Couldn't check the snapshot on repository $ES_REPO at $ES_HOST"
   return 3
 fi
+
+# old index delete
+echo " ... Deleteing old indexes ..."
+PAST_DATE=$(date --date= $RETENTION_PERIOD" day ago" +"%Y.%m.%d")
+curl -XDELETE http://$ES_HOST/$PAST_DATE
